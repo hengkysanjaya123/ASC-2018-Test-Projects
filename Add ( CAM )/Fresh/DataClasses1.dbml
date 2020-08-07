@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TO-AddCAM" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\sqlexpress;Initial Catalog=TO-AddCAM;Integrated Security=True" SettingsObjectName="Fresh.Properties.Settings" SettingsPropertyName="TO_AddCAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblDegree" Member="tblDegrees">
+    <Type Name="tblDegree">
+      <Column Name="DegreeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DegreeTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblDegree_tblMember" Member="tblMembers" ThisKey="DegreeID" OtherKey="StudentDegreeID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserLabel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DoB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Passwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Disabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblUser_tblMember" Member="tblMembers" ThisKey="UserID" OtherKey="UserID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGender" Member="tblGenders">
+    <Type Name="tblGender">
+      <Column Name="GenderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GenderTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblGender_tblMember" Member="tblMembers" ThisKey="GenderID" OtherKey="GenderID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMember" Member="tblMembers">
+    <Type Name="tblMember">
+      <Column Name="MemberCode" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MemberPasswd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="GenderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberDoB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberTel" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberAddress" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IDNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StaffFunctionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StaffDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentMajorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentDegreeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MemberDisabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblDegree_tblMember" Member="tblDegree" ThisKey="StudentDegreeID" OtherKey="DegreeID" Type="tblDegree" IsForeignKey="true" />
+      <Association Name="tblGender_tblMember" Member="tblGender" ThisKey="GenderID" OtherKey="GenderID" Type="tblGender" IsForeignKey="true" />
+      <Association Name="tblUser_tblMember" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+      <Association Name="tblMemberType_tblMember" Member="tblMemberType" ThisKey="MemberTypeID" OtherKey="MemberTypeID" Type="tblMemberType" IsForeignKey="true" />
+      <Association Name="tblStaffDepartment_tblMember" Member="tblStaffDepartment" ThisKey="StaffDepartmentID" OtherKey="StaffDepartmentID" Type="tblStaffDepartment" IsForeignKey="true" />
+      <Association Name="tblStaffFunction_tblMember" Member="tblStaffFunction" ThisKey="StaffFunctionID" OtherKey="StaffFunctionID" Type="tblStaffFunction" IsForeignKey="true" />
+      <Association Name="tblStudentMajor_tblMember" Member="tblStudentMajor" ThisKey="StudentMajorID" OtherKey="StudentMajorID" Type="tblStudentMajor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMemberType" Member="tblMemberTypes">
+    <Type Name="tblMemberType">
+      <Column Name="MemberTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MemberTypeTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Disabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblMemberType_tblMember" Member="tblMembers" ThisKey="MemberTypeID" OtherKey="MemberTypeID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStaffDepartment" Member="tblStaffDepartments">
+    <Type Name="tblStaffDepartment">
+      <Column Name="StaffDepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StaffDepartmentTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblStaffDepartment_tblMember" Member="tblMembers" ThisKey="StaffDepartmentID" OtherKey="StaffDepartmentID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStaffFunction" Member="tblStaffFunctions">
+    <Type Name="tblStaffFunction">
+      <Column Name="StaffFunctionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StaffFunctionTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblStaffFunction_tblMember" Member="tblMembers" ThisKey="StaffFunctionID" OtherKey="StaffFunctionID" Type="tblMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStudentMajor" Member="tblStudentMajors">
+    <Type Name="tblStudentMajor">
+      <Column Name="StudentMajorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentMajorTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblStudentMajor_tblMember" Member="tblMembers" ThisKey="StudentMajorID" OtherKey="StudentMajorID" Type="tblMember" />
+    </Type>
+  </Table>
+</Database>

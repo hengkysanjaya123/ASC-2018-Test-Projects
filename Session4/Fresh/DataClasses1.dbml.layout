@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="7008f3c6-2241-49c8-9e0e-1fa86bc9b9d4" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataClasses1DataContext/Airport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2574272a-5bd6-462c-8e89-59cc0f95e19b" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a9c73d4-12e7-41fe-abe7-b23c8bfabd8e" absoluteBounds="3.5, 2.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClasses1DataContext/Survey" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9567b78-3661-46a5-a6e4-afd4a350a8fa" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38773193-bef4-449c-89d6-0638c7e3b58c" absoluteBounds="3.5, 5.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataClasses1DataContext/Answer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aac8c2cc-0518-48e0-9acc-8348529ff3a0" absoluteBounds="3.515, 5.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4789eeb2-eaf8-46a8-ba00-263982996568" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataClasses1DataContext/CabinType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="568fb275-8caa-4fb2-80aa-4f35167301af" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9de204d-6364-45c5-a69f-f0f2fdbecbd4" absoluteBounds="6.25, 2.5, 2, 1.578595377604167">
+      <DataClassMoniker Name="/DataClasses1DataContext/DetailSurvey" />
+      <nestedChildShapes>
+        <elementListCompartment Id="977788da-4066-4452-ac3f-83f15de8fa7f" absoluteBounds="6.265, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d2d78c3-1a16-4d35-b667-355ce2dfd59b" absoluteBounds="3.5, 7.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataClasses1DataContext/Question" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b2299b6-23a2-49de-98fb-7a14d10900e3" absoluteBounds="3.515, 7.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Airport/Airport_Survey" />
+      <nodes>
+        <classShapeMoniker Id="7008f3c6-2241-49c8-9e0e-1fa86bc9b9d4" />
+        <classShapeMoniker Id="9a9c73d4-12e7-41fe-abe7-b23c8bfabd8e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.98599812825521); (3.5 : 2.98599812825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Airport/Airport_Survey1" />
+      <nodes>
+        <classShapeMoniker Id="7008f3c6-2241-49c8-9e0e-1fa86bc9b9d4" />
+        <classShapeMoniker Id="9a9c73d4-12e7-41fe-abe7-b23c8bfabd8e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.34699625651042); (4.5 : 1.34699625651042); (4.5 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/CabinType/CabinType_Survey" />
+      <nodes>
+        <classShapeMoniker Id="4789eeb2-eaf8-46a8-ba00-263982996568" />
+        <classShapeMoniker Id="9a9c73d4-12e7-41fe-abe7-b23c8bfabd8e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.84699625651042); (7.25 : 5.84699625651042); (7.25 : 4.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Answer/Answer_DetailSurvey" />
+      <nodes>
+        <classShapeMoniker Id="38773193-bef4-449c-89d6-0638c7e3b58c" />
+        <classShapeMoniker Id="a9de204d-6364-45c5-a69f-f0f2fdbecbd4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.28929768880208); (6.25 : 3.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Survey/Survey_DetailSurvey" />
+      <nodes>
+        <classShapeMoniker Id="9a9c73d4-12e7-41fe-abe7-b23c8bfabd8e" />
+        <classShapeMoniker Id="a9de204d-6364-45c5-a69f-f0f2fdbecbd4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.84699625651042); (6.7187475 : 7.84699625651042); (6.7187475 : 4.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Question/Question_DetailSurvey" />
+      <nodes>
+        <classShapeMoniker Id="1d2d78c3-1a16-4d35-b667-355ce2dfd59b" />
+        <classShapeMoniker Id="a9de204d-6364-45c5-a69f-f0f2fdbecbd4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
